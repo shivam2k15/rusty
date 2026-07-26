@@ -1,9 +1,10 @@
-// read a file text or return error via result enum
-use std::fs::read_to_string;
+// using package manager
+
+use chrono::{Local, Utc};
+
 fn main() {
-    let result = read_to_string("a.lock");
-    match result {
-        Ok(index) => print!("{}", index),
-        Err(err) => panic!("Error: {}", err),
-    }
+    let first = Local::now();
+    let second = Utc::now();
+    println!("{}", first);
+    println!("{}", second.format("%d-%m-%Y - %H:%M:%S"));
 }
