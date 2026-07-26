@@ -1,19 +1,9 @@
-// find char 'a' index in a string application if option
-
+// read a file text or return error via result enum
+use std::fs::read_to_string;
 fn main() {
-    let s = String::from("Shivam");
-    let index = find_index(s, 'k');
-    match index {
-        Some(index) => print!("{}", index),
-        None => print!("no index"),
+    let result = read_to_string("a.lock");
+    match result {
+        Ok(index) => print!("{}", index),
+        Err(err) => panic!("Error: {}", err),
     }
-}
-
-fn find_index(s: String, a: char) -> Option<usize> {
-    for (index, character) in s.chars().enumerate() {
-        if character == a {
-            return Some(index);
-        }
-    }
-    return None;
 }
