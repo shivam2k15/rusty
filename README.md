@@ -15,7 +15,7 @@ Learning Rust through fundamentals, Data Structures & Algorithms, and small Low-
 
 ## ✅ Progress
 
-- [ ] Rust Fundamentals
-- [ ] DSA
+- [x] Rust Fundamentals
+- [x] DSA
 
 ---
