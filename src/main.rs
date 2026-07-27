@@ -1,10 +1,12 @@
-// using package manager
-
-use chrono::{Local, Utc};
-
+//moving ownership borrowing references
 fn main() {
-    let first = Local::now();
-    let second = Utc::now();
-    println!("{}", first);
-    println!("{}", second.format("%d-%m-%Y - %H:%M:%S"));
+    let mut a = String::from("some");
+    // let b = a;
+    check(&mut a);
+    println!("{}", a);
+}
+
+fn check(s: &mut String) {
+    s.push_str("string");
+    println!("{}", s);
 }
